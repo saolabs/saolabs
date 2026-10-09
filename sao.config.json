@@ -1,0 +1,68 @@
+{
+    "packages": {
+        "saola": "1.0.0"
+    },
+    "paths": {
+        "resources": "resources",
+        "saoView": "resources/saola",
+        "bladeView": "resources/views",
+        "compiled": "resources/js/saola",
+        "public": "public/static/saola",
+        "sharedApp": "_app"
+    },
+    "output": {
+        "default": "app/js",
+        "contexts": {
+            "web": "web/js"
+        }
+    },
+    "contexts": {
+        "web": {
+            "name": "Web",
+            "dist": {
+                "static": {
+                    "origin": "https://saolabs.org"
+                },
+                "css": false,
+                "html": {
+                    "title": "SaoLabs",
+                    "bodyClass": "saolabs-body"
+                },
+                "styles": [
+                    "/assets/cartzilla/icons/cartzilla-icons.min.css",
+                    "/assets/cartzilla/css/theme.min.css",
+                    "/assets/css/site.css"
+                ],
+                "scripts": [
+                    "/assets/js/site.js"
+                ],
+                "assets": [
+                    {
+                        "from": "public/assets/fonts/ROBOTO-OFL.txt",
+                        "to": "assets/fonts/ROBOTO-OFL.txt"
+                    }
+                ]
+            },
+            "app": [
+                "web/app"
+            ],
+            "views": {
+                "web": "web/views"
+            },
+            "blade": {
+                "web": "web"
+            },
+            "compiled": {
+                "views": "web/views",
+                "app": "web/app",
+                "registry": "web/registry.js"
+            },
+            "registry": {
+                "lazy": false
+            }
+        }
+    },
+    "compiler": {
+        "idMode": "terse"
+    }
+}

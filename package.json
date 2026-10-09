@@ -1,0 +1,42 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "saolabs",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dist": "sao-dist",
+        "dist:web": "sao-dist web",
+        "dist:all": "sao-dist all",
+        "build": "npm run build:web",
+        "build:web": "npm run check && VITE_CONTEXT=web vite build",
+        "build:all": "npm run build:web",
+        "dev": "npm run dev:web",
+        "dev:container": "VITE_CONTEXT=web SAOLA_LOCAL_CLIENT=true concurrently -k -n server,vite -c yellow,cyan \"npm:dev:server\" \"vite\"",
+        "dev:web": "VITE_CONTEXT=web SAOLA_LOCAL_CLIENT=true concurrently -k -n server,vite -c yellow,cyan \"npm:dev:server\" \"vite\"",
+        "dev:server": "php artisan serve --host=${DEV_HOST:-127.0.0.1} --port=${DEV_PORT:-8004} --no-reload",
+        "build:views": "sao-compile all",
+        "build:views:web": "sao-compile web",
+        "dev:views": "sao-compile all --watch",
+        "typecheck": "tsc --noEmit",
+        "check": "npm run build:views && npm run typecheck",
+        "dist:static": "node scripts/export-static.mjs"
+    },
+    "devDependencies": {
+        "@saolabs/builder": "file:../builder",
+        "@tailwindcss/vite": "^4.0.0",
+        "concurrently": "^9.2.3",
+        "laravel-vite-plugin": "^1.2.0",
+        "tailwindcss": "^4.0.0",
+        "typescript": "^5.9.3",
+        "vite": "^6.4.0"
+    },
+    "dependencies": {
+        "@saolabs/client": "file:../client",
+        "axios": "^1.11.0"
+    },
+    "optionalDependencies": {
+        "@rollup/rollup-darwin-arm64": "^4.63.3",
+        "@rollup/rollup-linux-arm64-gnu": "^4.63.3",
+        "@rollup/rollup-linux-x64-gnu": "^4.63.3"
+    }
+}

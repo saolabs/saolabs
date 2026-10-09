@@ -1,0 +1,55 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+    container_name: saolabs_dev
+    working_dir: /workspace/saolabs
+    init: true
+    tty: true
+    stdin_open: true
+    ports:
+      - "8004:8004"
+      - "5177:5175"
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: http://localhost:8004
+      DB_CONNECTION: sqlite
+      DEV_HOST: 0.0.0.0
+      DEV_PORT: 8004
+      VITE_DEV_HOST: 0.0.0.0
+      VITE_HMR_HOST: localhost
+      VITE_DEV_PORT: 5175
+      VITE_HMR_CLIENT_PORT: 5177
+      CHOKIDAR_USEPOLLING: "true"
+      WATCHPACK_POLLING: "true"
+      TSC_WATCHFILE: DynamicPriorityPolling
+    volumes:
+      - ..:/workspace
+      - saolabs_vendor:/workspace/saolabs/vendor
+      - saolabs_node_modules:/workspace/saolabs/node_modules
+      - client_node_modules:/workspace/client/node_modules
+      - builder_node_modules:/workspace/builder/node_modules
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://localhost:8004"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 60s
+    networks:
+      - saolabs_network
+
+volumes:
+  saolabs_vendor:
+    driver: local
+  saolabs_node_modules:
+    driver: local
+  client_node_modules:
+    driver: local
+  builder_node_modules:
+    driver: local
+
+networks:
+  saolabs_network:
+    driver: bridge
