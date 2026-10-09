@@ -46,7 +46,6 @@ function saolaAssets({ context, root }) {
     };
 }
 
-const useLocalSaolaClient = process.env.SAOLA_LOCAL_CLIENT === 'true';
 const devHost = process.env.VITE_DEV_HOST || '127.0.0.1';
 const hmrHost = process.env.VITE_HMR_HOST || '127.0.0.1';
 const devPort = Number(process.env.VITE_DEV_PORT || 5175);
@@ -72,9 +71,6 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            ...(useLocalSaolaClient ? {
-                '@saolabs/client': path.resolve(__dirname, '../client/dist/index.js'),
-            } : {}),
             '@': path.resolve(__dirname, 'resources/js'),
             '@sao': path.resolve(__dirname, 'resources/saola'),
             '@app': path.resolve(__dirname, 'resources/saola/_app'),
@@ -83,10 +79,6 @@ export default defineConfig({
             '@compiled': path.resolve(__dirname, 'resources/js/saola'),
             '@views': path.resolve(__dirname, `resources/js/saola/${context}`),
         }
-    },
-    optimizeDeps: {
-        force: useLocalSaolaClient,
-        ...(useLocalSaolaClient ? { exclude: ['@saolabs/client'] } : {}),
     },
     publicDir: false,
     build: {
@@ -126,8 +118,5 @@ export default defineConfig({
         watch: {
             ignored: ['**/storage/**'],
         },
-        ...(useLocalSaolaClient ? {
-            fs: { allow: [path.resolve(__dirname, '..')] },
-        } : {}),
     },
 });

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6f2f5c80d5655edefdf9644fab1ba03",
+    "content-hash": "c6c45bf1f0aa28f3cd843a62f6dc6399",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -834,7 +834,7 @@
                     "homepage": "https://github.com/Nyholm"
                 },
                 {
-                    "name": "M\u00e1rk S\u00e1gi-Kaz\u00e1r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com",
                     "homepage": "https://github.com/sagikazarmark"
                 },
@@ -1032,7 +1032,7 @@
                     "homepage": "https://github.com/Nyholm"
                 },
                 {
-                    "name": "M\u00e1rk S\u00e1gi-Kaz\u00e1r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com",
                     "homepage": "https://github.com/sagikazarmark"
                 },
@@ -1042,7 +1042,7 @@
                     "homepage": "https://github.com/Tobion"
                 },
                 {
-                    "name": "M\u00e1rk S\u00e1gi-Kaz\u00e1r",
+                    "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com",
                     "homepage": "https://sagikazarmark.hu"
                 }
@@ -1649,16 +1649,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.10.1",
+            "version": "2.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "9d489ab67a02960fd8ffe624d93f751daf95439e"
+                "reference": "6efbd9c472b91db0a3350fcd601c8332c2382e1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/9d489ab67a02960fd8ffe624d93f751daf95439e",
-                "reference": "9d489ab67a02960fd8ffe624d93f751daf95439e",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/6efbd9c472b91db0a3350fcd601c8332c2382e1f",
+                "reference": "6efbd9c472b91db0a3350fcd601c8332c2382e1f",
                 "shasum": ""
             },
             "require": {
@@ -1752,7 +1752,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-07T13:44:26+00:00"
+            "time": "2026-09-21T13:07:34+00:00"
         },
         {
             "name": "league/config",
@@ -2471,7 +2471,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "\ud83d\udcd0 Nette Schema: validating data structures against a given Schema.",
+            "description": "📐 Nette Schema: validating data structures against a given Schema.",
             "homepage": "https://nette.org",
             "keywords": [
                 "config",
@@ -2550,7 +2550,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "\ud83d\udee0  Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
+            "description": "🛠  Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
             "homepage": "https://nette.org",
             "keywords": [
                 "array",
@@ -3440,11 +3440,17 @@
         },
         {
             "name": "saola/compiler",
-            "version": "dev-main",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saolabs/compiler.git",
+                "reference": "6f240453db5f329af8a3a05164c9e44f56011c77"
+            },
             "dist": {
-                "type": "path",
-                "url": "../compiler",
-                "reference": "9dadead11ffa9067a65423f7a91bbd569765711b"
+                "type": "zip",
+                "url": "https://api.github.com/repos/saolabs/compiler/zipball/6f240453db5f329af8a3a05164c9e44f56011c77",
+                "reference": "6f240453db5f329af8a3a05164c9e44f56011c77",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -3454,8 +3460,8 @@
                 "phpunit/phpunit": "^11.5"
             },
             "suggest": {
-                "ext-mbstring": "C\u1ea7n cho hash scope CSS theo codepoint (ScopedStyle)",
-                "illuminate/support": "C\u1ea7n cho SaolaCompilerServiceProvider v\u00e0 l\u1ec7nh artisan sao:compile (Laravel ^11|^12|^13)"
+                "ext-mbstring": "Cần cho hash scope CSS theo codepoint (ScopedStyle)",
+                "illuminate/support": "Cần cho SaolaCompilerServiceProvider và lệnh artisan sao:compile (Laravel ^11|^12|^13)"
             },
             "bin": [
                 "bin/saoc"
@@ -3473,27 +3479,7 @@
                     "Saola\\Compiler\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Saola\\Compiler\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "check": [
-                    "composer validate --strict --no-interaction",
-                    "composer audit --locked",
-                    "@test"
-                ],
-                "test": [
-                    "@test:unit"
-                ],
-                "test:unit": [
-                    "phpunit"
-                ],
-                "lint": [
-                    "php -l src/SaolaCompiler.php"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3503,25 +3489,33 @@
                     "email": "saolaxoder@gmail.com"
                 }
             ],
-            "description": "Saola Compiler - bi\u00ean d\u1ecbch .sao sang Blade (SSR) v\u00e0 JavaScript (CSR)",
+            "description": "Saola Compiler - biên dịch .sao sang Blade (SSR) và JavaScript (CSR)",
             "keywords": [
+                "SPA",
                 "blade",
                 "compiler",
                 "laravel",
-                "saola",
-                "spa"
+                "saola"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/saolabs/compiler/issues",
+                "source": "https://github.com/saolabs/compiler/tree/v1.0.2"
+            },
+            "time": "2026-10-09T16:06:38+00:00"
         },
         {
             "name": "saola/core",
-            "version": "dev-main",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saolabs/core.git",
+                "reference": "24c7efc2f37a8413ba4ae532a5edf8443cbc7413"
+            },
             "dist": {
-                "type": "path",
-                "url": "../core",
-                "reference": "67dee260e5338816027064ab7a872ed95b0783cb"
+                "type": "zip",
+                "url": "https://api.github.com/repos/saolabs/core/zipball/24c7efc2f37a8413ba4ae532a5edf8443cbc7413",
+                "reference": "24c7efc2f37a8413ba4ae532a5edf8443cbc7413",
+                "shasum": ""
             },
             "require": {
                 "bacon/bacon-qr-code": "^3.0",
@@ -3540,40 +3534,26 @@
             "type": "library",
             "extra": {
                 "laravel": {
-                    "providers": [
-                        "Saola\\Core\\Providers\\SaolaServiceProvider"
-                    ],
                     "aliases": {
                         "Saola": "Saola\\Core\\Facades\\Saola"
-                    }
+                    },
+                    "providers": [
+                        "Saola\\Core\\Providers\\SaolaServiceProvider"
+                    ]
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Saola\\Core\\": "src/core/"
-                },
                 "files": [
                     "src/helpers/__loader__.php"
                 ],
+                "psr-4": {
+                    "Saola\\Core\\": "src/core/"
+                },
                 "classmap": [
                     "src/config/"
                 ]
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "phpunit tests"
-                ],
-                "check": [
-                    "composer validate --strict --no-interaction",
-                    "composer audit --locked",
-                    "@test"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3583,10 +3563,12 @@
                     "email": "support@saolabs.dev"
                 }
             ],
-            "description": "Saola \u2014 Laravel Core Library for building reactive full-stack applications",
-            "transport-options": {
-                "relative": true
-            }
+            "description": "Saola — Laravel Core Library for building reactive full-stack applications",
+            "support": {
+                "issues": "https://github.com/saolabs/core/issues",
+                "source": "https://github.com/saolabs/core/tree/v1.0.2"
+            },
+            "time": "2026-10-09T16:06:16+00:00"
         },
         {
             "name": "symfony/clock",
@@ -3801,7 +3783,7 @@
                     "email": "fabien@symfony.com"
                 },
                 {
-                    "name": "Jean-Fran\u00e7ois Simon",
+                    "name": "Jean-François Simon",
                     "email": "jeanfrancois.simon@sensiolabs.com"
                 },
                 {
@@ -5447,7 +5429,7 @@
             ],
             "authors": [
                 {
-                    "name": "Gr\u00e9goire Pineau",
+                    "name": "Grégoire Pineau",
                     "email": "lyrixx@lyrixx.info"
                 },
                 {
@@ -6019,7 +6001,7 @@
             ],
             "authors": [
                 {
-                    "name": "Gr\u00e9goire Pineau",
+                    "name": "Grégoire Pineau",
                     "email": "lyrixx@lyrixx.info"
                 },
                 {
@@ -6208,12 +6190,12 @@
             "version": "v5.7.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/vlucas/phpdotenv.git",
+                "url": "https://github.com/phpdotenv/phpdotenv.git",
                 "reference": "301c07936b16d88628b126b01d082ba153cf4c40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/301c07936b16d88628b126b01d082ba153cf4c40",
+                "url": "https://api.github.com/repos/phpdotenv/phpdotenv/zipball/301c07936b16d88628b126b01d082ba153cf4c40",
                 "reference": "301c07936b16d88628b126b01d082ba153cf4c40",
                 "shasum": ""
             },
@@ -6694,7 +6676,7 @@
             ],
             "authors": [
                 {
-                    "name": "Fran\u00e7ois Zaninotto"
+                    "name": "François Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
@@ -6749,7 +6731,7 @@
             ],
             "authors": [
                 {
-                    "name": "Th\u00e9o FIDRY",
+                    "name": "Théo FIDRY",
                     "email": "theo.fidry@gmail.com"
                 }
             ],
@@ -7067,7 +7049,7 @@
             ],
             "authors": [
                 {
-                    "name": "P\u00e1draic Brady",
+                    "name": "Pádraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "https://github.com/padraic",
                     "role": "Author"
@@ -9655,15 +9637,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "saola/compiler": 20,
-        "saola/core": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.3"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.9.0"
 }

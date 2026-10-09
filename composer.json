@@ -11,23 +11,13 @@
         "ai"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../core"
-        },
-        {
-            "type": "path",
-            "url": "../compiler"
-        }
-    ],
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.0",
         "laravel/sanctum": "^4.1",
         "laravel/tinker": "^3.0",
-        "saola/core": "dev-main",
-        "saola/compiler": "dev-main"
+        "saola/core": "^1.0.2",
+        "saola/compiler": "^1.0.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.24",
