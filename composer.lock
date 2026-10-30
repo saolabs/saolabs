@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6c45bf1f0aa28f3cd843a62f6dc6399",
+    "content-hash": "1737e988723a70dbb657ad6d85927cf5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3440,16 +3440,16 @@
         },
         {
             "name": "saola/compiler",
-            "version": "v1.0.2",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/saolabs/compiler.git",
-                "reference": "6f240453db5f329af8a3a05164c9e44f56011c77"
+                "reference": "6e13a38919e51f3b18028bf0ae9fb548e0936008"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/saolabs/compiler/zipball/6f240453db5f329af8a3a05164c9e44f56011c77",
-                "reference": "6f240453db5f329af8a3a05164c9e44f56011c77",
+                "url": "https://api.github.com/repos/saolabs/compiler/zipball/6e13a38919e51f3b18028bf0ae9fb548e0936008",
+                "reference": "6e13a38919e51f3b18028bf0ae9fb548e0936008",
                 "shasum": ""
             },
             "require": {
@@ -3499,22 +3499,22 @@
             ],
             "support": {
                 "issues": "https://github.com/saolabs/compiler/issues",
-                "source": "https://github.com/saolabs/compiler/tree/v1.0.2"
+                "source": "https://github.com/saolabs/compiler/tree/v3.0.0"
             },
-            "time": "2026-10-09T16:06:38+00:00"
+            "time": "2026-10-24T15:38:12+00:00"
         },
         {
             "name": "saola/core",
-            "version": "v1.0.2",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/saolabs/core.git",
-                "reference": "24c7efc2f37a8413ba4ae532a5edf8443cbc7413"
+                "reference": "f2bab79f66ab29a0cd49610235a7041b35d0ab86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/saolabs/core/zipball/24c7efc2f37a8413ba4ae532a5edf8443cbc7413",
-                "reference": "24c7efc2f37a8413ba4ae532a5edf8443cbc7413",
+                "url": "https://api.github.com/repos/saolabs/core/zipball/f2bab79f66ab29a0cd49610235a7041b35d0ab86",
+                "reference": "f2bab79f66ab29a0cd49610235a7041b35d0ab86",
                 "shasum": ""
             },
             "require": {
@@ -3566,9 +3566,9 @@
             "description": "Saola — Laravel Core Library for building reactive full-stack applications",
             "support": {
                 "issues": "https://github.com/saolabs/core/issues",
-                "source": "https://github.com/saolabs/core/tree/v1.0.2"
+                "source": "https://github.com/saolabs/core/tree/v2.7.0"
             },
-            "time": "2026-10-09T16:06:16+00:00"
+            "time": "2026-10-29T11:15:11+00:00"
         },
         {
             "name": "symfony/clock",
@@ -4475,16 +4475,16 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v8.1.7",
+            "version": "v8.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "773ac57f20e2795bdadb65b5b1b5f4850d498283"
+                "reference": "8d1232052c9cdef170ed9608b3147bca4f61ff69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/773ac57f20e2795bdadb65b5b1b5f4850d498283",
-                "reference": "773ac57f20e2795bdadb65b5b1b5f4850d498283",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/8d1232052c9cdef170ed9608b3147bca4f61ff69",
+                "reference": "8d1232052c9cdef170ed9608b3147bca4f61ff69",
                 "shasum": ""
             },
             "require": {
@@ -4537,7 +4537,7 @@
                 "mime-type"
             ],
             "support": {
-                "source": "https://github.com/symfony/mime/tree/v8.1.7"
+                "source": "https://github.com/symfony/mime/tree/v8.1.10"
             },
             "funding": [
                 {
@@ -4557,7 +4557,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-04T11:02:17+00:00"
+            "time": "2026-10-28T17:58:38+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

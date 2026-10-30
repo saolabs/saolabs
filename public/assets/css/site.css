@@ -686,3 +686,82 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--site-primary); 
 }
 
 summary:focus-visible { outline: 3px solid var(--site-primary); outline-offset: 4px; border-radius: 4px; }
+
+/* Downloadable desktop products. */
+.tone-buzz { background: #f2ecfb; }
+.tone-activity { background: #eaf5f1; }
+.tone-buzz .product-emblem { color: #8762b4; }
+.tone-activity .product-emblem { color: #508f7b; }
+.desktop-products { padding-top: 48px; }
+.desktop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.desktop-catalog { margin-top: 22px; }
+.desktop-catalog .catalog-card { display: flex; }
+.desktop-catalog .catalog-description { min-height: 96px; }
+.desktop-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: auto; }
+.desktop-actions .btn { font-size: 12px; gap: 8px; }
+.desktop-actions .product-link { margin-top: 0; gap: 7px; }
+.desktop-details { margin-top: 16px; }
+.desktop-preview { display: flex; align-items: center; justify-content: center; height: 260px; flex-shrink: 0; padding: 20px; }
+.desktop-preview img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center top; }
+.desktop-visual { padding: 28px; }
+.desktop-visual > img { display: block; width: 100%; height: auto; max-height: 440px; object-fit: contain; }
+.desktop-visual .preview-caption { margin-top: 18px; }
+.downloads-section { padding-top: 16px; padding-bottom: 65px; scroll-margin-top: 100px; }
+.download-description { color: var(--site-muted); font-size: 14px; line-height: 1.8; margin-bottom: 0; }
+.download-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.download-card { padding: 26px; border: 1px solid var(--site-line); border-radius: 16px; min-width: 0; }
+.download-card h3 { font-size: 19px; margin-bottom: 22px; }
+.download-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.download-links .btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; }
+.download-note { color: var(--site-muted); font-size: 13px; line-height: 1.8; margin: 24px 0 12px; max-width: 800px; }
+.download-help { display: flex; flex-wrap: wrap; gap: 14px 24px; font-size: 13px; }
+.download-help a { display: inline-flex; align-items: center; gap: 7px; }
+.buzz-login-preview { margin: 0; padding: 30px; display: flex; flex-direction: column; align-items: center; background: linear-gradient(145deg, #eee5f9, #f8f5fc); }
+.buzz-login-image { display: block; width: min(100%, 280px); }
+.buzz-login-image img { display: block; width: 100%; height: auto; box-shadow: 0 14px 34px #49355d26; border-radius: 4px; }
+.buzz-login-preview figcaption { margin-top: 22px; text-align: center; }
+.buzz-login-preview figcaption p { margin-bottom: 8px; font-size: 13px; color: #65576f; }
+.buzz-login-preview figcaption a, .buzz-screen figcaption a { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; }
+.buzz-gallery { padding-top: 10px; padding-bottom: 64px; }
+.buzz-gallery-intro { max-width: 680px; color: var(--site-muted); font-size: 15px; line-height: 1.85; margin: 18px 0 0; }
+.buzz-gallery-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 26px; align-items: start; }
+.buzz-screen { min-width: 0; margin: 0; }
+.buzz-screen-image { display: flex; align-items: center; justify-content: center; min-width: 0; padding: 28px; border-radius: 20px; background: #f4f1f8; }
+.buzz-screen-image img { display: block; width: 100%; height: auto; box-shadow: 0 10px 28px #49355d1c; border-radius: 4px; }
+.buzz-screen-buddies img { max-width: 260px; }
+.buzz-screen-chat .buzz-screen-image { background: #f3f5f8; }
+.buzz-screen figcaption { padding: 24px 4px 0; }
+.buzz-screen h3 { font-size: 21px; font-weight: 600; margin-bottom: 12px; }
+.buzz-screen figcaption p { color: var(--site-muted); font-size: 14px; line-height: 1.8; margin-bottom: 12px; }
+.buzz-catalog-preview { gap: 16px; }
+.buzz-catalog-preview img:first-child { width: 29%; }
+.buzz-catalog-preview img:last-child { width: 64%; }
+@media (max-width: 767px) {
+  .desktop-grid, .download-grid { grid-template-columns: 1fr; }
+  .desktop-products { padding-top: 30px; }
+  .desktop-visual { padding: 22px; }
+  .downloads-section { padding-bottom: 40px; }
+  .buzz-login-preview { padding: 24px; }
+  .buzz-gallery { padding-bottom: 40px; }
+  .buzz-gallery-grid { grid-template-columns: 1fr; gap: 36px; }
+  .buzz-screen-image { padding: 22px; }
+  .buzz-screen figcaption { padding-top: 20px; }
+}
+
+/* Gehihi joins the web product catalog. */
+.tone-gehihi { background: #fff1ec; }
+.tone-gehihi .product-emblem, .tone-gehihi .node-icon { color: #ed6249; }
+.ecosystem-branches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ecosystem-branches::before { left: 25%; right: 25%; }
+.product-platforms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gehihi-tools { padding-bottom: 45px; }
+.gehihi-tools h2 { font-size: 24px; font-weight: 600; margin-bottom: 14px; }
+.gehihi-tools p { color: var(--site-muted); font-size: 14px; line-height: 1.85; max-width: 950px; }
+@media (max-width: 900px) {
+  .catalog-grid.product-platforms { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .mini-grid.product-platforms, .guide-grid { grid-template-columns: 1fr; }
+  .gehihi-tools { padding-bottom: 30px; }
+}

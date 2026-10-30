@@ -1,0 +1,36 @@
+<template>
+@pageStart
+<div id="saolabs-app">
+<a data-nav="false" class="skip-link" href="#main">{{ trans('site.layout.accessibility.skip') }}</a>
+<div class="topbar"><div class="container topbar-inner"><span>{{ trans('site.layout.header.tagline') }}</span><a data-nav="false" href="mailto:support@saolabs.org"><i class="ci-mail" aria-hidden="true"></i>support&#64;saolabs.org</a></div></div>
+<header class="site-header" id="top"><div class="container header-inner">
+<a href="{{ site_url('') }}" class="brand" aria-label="SaoLabs"><img src="/assets/img/saolabs-mark.svg" width="32" height="32" alt=""><span>SaoLabs</span></a>
+<nav class="desktop-nav" aria-label="{{ trans('site.layout.accessibility.navigation') }}">
+<a href="{{ site_url('about') }}" aria-current="{{ site_slug() === 'about' ? 'page' : 'false' }}">{{ trans('site.navigation.about') }}</a>
+<a href="{{ site_url('products') }}" aria-current="{{ str_starts_with(site_slug(), 'products') ? 'true' : 'false' }}">{{ trans('site.navigation.products') }}</a>
+<a href="{{ site_url('contact') }}" class="nav-contact" aria-current="{{ site_slug() === 'contact' ? 'page' : 'false' }}">{{ trans('site.navigation.contact') }}</a>
+</nav>
+<div class="header-actions">
+<details class="language-picker"><summary class="language-link"><i class="ci-globe" aria-hidden="true"></i>{{ trans('site.navigation.language') }}<i class="ci-chevron-down" aria-hidden="true"></i></summary><div class="language-options">
+@foreach (site_languages() as language)
+<a href="{{ language['url'] }}" data-language-link="true" lang="{{ language['locale'] }}" hreflang="{{ language['locale'] }}" aria-current="{{ language['current'] ? 'page' : 'false' }}">{{ language['label'] }}</a>
+@endforeach
+</div></details>
+<button class="menu-toggle btn btn-icon btn-secondary" type="button" aria-label="{{ trans('site.layout.accessibility.open_menu') }}" aria-expanded="false" aria-controls="mobile-nav"><i class="ci-menu" aria-hidden="true"></i></button></div>
+</div><nav id="mobile-nav" class="mobile-nav container" aria-label="{{ trans('site.layout.accessibility.mobile_nav') }}" hidden>
+<a href="{{ site_url('about') }}" aria-current="{{ site_slug() === 'about' ? 'page' : 'false' }}">{{ trans('site.navigation.about') }}</a>
+<a href="{{ site_url('products') }}" aria-current="{{ str_starts_with(site_slug(), 'products') ? 'true' : 'false' }}">{{ trans('site.navigation.products') }}</a>
+<a href="{{ site_url('contact') }}" class="nav-contact" aria-current="{{ site_slug() === 'contact' ? 'page' : 'false' }}">{{ trans('site.navigation.contact') }}</a>
+</nav></header>
+<main id="main">
+@useBlock('content')
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><a href="{{ site_url('') }}" class="brand" aria-label="SaoLabs"><img src="/assets/img/saolabs-mark.svg" width="32" height="32" alt=""><span>SaoLabs</span></a><p class="footer-description">{{ trans('site.layout.footer.description') }}</p><a data-nav="false" href="https://github.com/saolabs" class="github-link" target="_blank" rel="noopener noreferrer"><i class="ci-github" aria-hidden="true"></i>GitHub</a></div><div class="footer-links"><h3>{{ trans('site.navigation.explore') }}</h3><a href="{{ site_url('products') }}" >{{ trans('site.layout.footer.links.products') }}</a><a href="{{ site_url('about') }}" >{{ trans('site.layout.footer.links.about') }}</a><a href="{{ site_url('about#team') }}" >{{ trans('site.layout.footer.links.team') }}</a><a href="{{ site_url('contact') }}" >{{ trans('site.layout.footer.links.contact') }}</a></div><div class="footer-links"><h3>{{ trans('site.layout.footer.connect') }}</h3><a data-nav="false" href="mailto:support@saolabs.org" >support&#64;saolabs.org</a><a data-nav="false" href="tel:+84382434682" >+84 382 434 682</a><span>{{ trans('site.layout.footer.location') }}</span></div></div>
+<div class="container footer-bottom"><span>{{ trans('site.layout.footer.copyright') }}</span><div>
+@foreach (site_languages() as language)
+<a href="{{ language['url'] }}" data-language-link="true" lang="{{ language['locale'] }}" hreflang="{{ language['locale'] }}" aria-current="{{ language['current'] ? 'page' : 'false' }}">{{ language['label'] }}</a>
+@endforeach
+<a data-nav="false" href="#top" >{{ trans('site.layout.footer.back_to_top') }}<i class="ci-arrow-up" aria-hidden="true"></i></a></div></div></footer>
+</div>
+@pageEnd
+</template>

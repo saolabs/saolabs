@@ -16,8 +16,8 @@
         "laravel/framework": "^13.0",
         "laravel/sanctum": "^4.1",
         "laravel/tinker": "^3.0",
-        "saola/core": "^1.0.2",
-        "saola/compiler": "^1.0.2"
+        "saola/core": "^2.7",
+        "saola/compiler": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.24",

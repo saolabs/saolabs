@@ -37,3 +37,7 @@ database/database.sqlite-journal
 
 
 ssh.txt
+/mail.txt
+
+# Private deployment configuration
+/.deploy.env

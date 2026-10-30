@@ -9,6 +9,7 @@ class Site
     public static function resolve(string $path): array
     {
         $path = trim($path, '/');
+        $path = str_ends_with($path, '.html') ? substr($path, 0, -5) : $path;
         foreach (config('site.locales') as $locale => $settings) {
             $prefix = $settings['prefix'];
             if ($prefix !== '' && ($path === $prefix || str_starts_with($path, $prefix.'/'))) {
@@ -26,7 +27,13 @@ class Site
         $locale ??= app()->getLocale();
         $settings = config('site.locales')[$locale] ?? throw new InvalidArgumentException('Unsupported locale: '.$locale);
 
-        return '/'.trim($settings['prefix'].'/'.ltrim($slug, '/'), '/');
+        preg_match('/^([^?#]*)(.*)$/', $slug, $parts);
+        $slug = trim($parts[1], '/');
+        if ($slug !== '' && !str_ends_with($slug, '.html')) {
+            $slug .= '.html';
+        }
+
+        return '/'.trim($settings['prefix'].'/'.$slug, '/').$parts[2];
     }
 
     public static function languages(): array
@@ -44,9 +51,9 @@ class Site
     public static function translations(): array
     {
         $messages = [];
-        foreach (array_unique([app()->getLocale(), config('app.fallback_locale')]) as $locale) {
+        foreach (array_unique([...array_keys(config('site.locales')), app()->getLocale(), config('app.fallback_locale')]) as $locale) {
             // Laravel owns loading, overrides and fallback; the browser receives
-            // the same catalog for hydration, with no translation fetch needed.
+            // all site languages for hydration and SPA locale changes.
             $messages[$locale] = ['groups' => ['site' => trans('site', [], $locale)]];
         }
 

@@ -19,10 +19,11 @@
         "dev:views": "sao-compile all --watch",
         "typecheck": "tsc --noEmit",
         "check": "npm run build:views && npm run typecheck",
-        "dist:static": "node scripts/export-static.mjs"
+        "dist:static": "node scripts/export-static.mjs",
+        "deploy": "bash scripts/deploy.sh"
     },
     "devDependencies": {
-        "@saolabs/builder": "1.0.2",
+        "@saolabs/builder": "https://github.com/saolabs/builder/archive/refs/tags/v1.3.3.tar.gz",
         "@tailwindcss/vite": "^4.0.0",
         "concurrently": "^9.2.3",
         "laravel-vite-plugin": "^1.2.0",
@@ -32,7 +33,7 @@
         "@emnapi/wasi-threads": "^1.2.3"
     },
     "dependencies": {
-        "@saolabs/client": "1.0.2",
+        "@saolabs/client": "https://github.com/saolabs/client/archive/refs/tags/v1.5.1.tar.gz",
         "axios": "^1.11.0"
     },
     "optionalDependencies": {

@@ -2,13 +2,17 @@
 
 return [
     'meta' => [
+        'gehihi' => [
+            'title' => 'Gehihi — Create AI Agents for Your Work | SaoLabs',
+            'description' => 'Create AI agents without coding with Gehihi by SaoLabs. Combine reusable skills, private knowledge, multi-step workflows and schedules, and track results.',
+        ],
         'home' => [
             'title' => 'SaoLabs — Software Foundations & Practical AI Ecosystem',
-            'description' => 'SaoLabs is an independent software team based in Vietnam, building Saola Framework, NeverSEO, and Crazify. We create focused, clean-code tools for real-world problems.',
+            'description' => 'SaoLabs builds Saola Framework, Gehihi, NeverSEO, Crazify and desktop applications: web platforms, practical AI tools and useful desktop apps.',
         ],
         'products' => [
-            'title' => 'Our Products — Saola, NeverSEO & Crazify | SaoLabs',
-            'description' => 'Explore the SaoLabs ecosystem: Saola for modern web applications on Laravel, NeverSEO for search & AI visibility, and Crazify for research and actionable planning.',
+            'title' => 'Our Products — Web Platforms & Desktop Apps | SaoLabs',
+            'description' => 'Explore Saola, Gehihi, NeverSEO, Crazify, Buzz! Messenger and Activity Monitor Widget. Product details, GitHub repositories and direct desktop downloads.',
         ],
         'saola' => [
             'title' => 'Saola Framework — Modern Web SPA Platform on Laravel | SaoLabs',
@@ -22,13 +26,21 @@ return [
             'title' => 'Crazify — Turn Early Ideas into Actionable Roadmaps | SaoLabs',
             'description' => 'An AI-assisted workspace: analyze core problems, validate market data, and produce actionable plans while keeping people firmly in control.',
         ],
+        'buzz' => [
+            'title' => 'Buzz! Messenger — Classic Desktop Chat | SaoLabs',
+            'description' => 'Chat on Facebook Messenger with a classic Yahoo-style desktop interface. Groups, emoticons, BUZZ and file sharing. Download for Windows, macOS and Linux.',
+        ],
+        'activity' => [
+            'title' => 'Activity Monitor Widget — System Activity for macOS | SaoLabs',
+            'description' => 'Monitor CPU, GPU, memory, disk, network, temperature, battery and storage with a native macOS menu-bar app and desktop widget. Download for Apple Silicon.',
+        ],
         'about' => [
             'title' => 'About SaoLabs — Our Story & Engineering Team',
             'description' => 'Meet the builders behind Saola Framework, NeverSEO, and Crazify. Learn about our engineering philosophy, values, and practical approach to AI.',
         ],
         'contact' => [
             'title' => 'Contact SaoLabs — Technical Support & Collaboration',
-            'description' => 'Connect with SaoLabs at support.saolabs@gmail.com or +84 382 434 682. Product support, custom software development, and partnership in Phú Thọ, Vietnam.',
+            'description' => 'Connect with SaoLabs at support@saolabs.org or +84 382 434 682. Product support, custom software development, and partnership in Phú Thọ, Vietnam.',
         ],
     ],
     'navigation' => [
@@ -66,6 +78,21 @@ return [
         'actions' => [
             'product' => 'Explore product',
             'source' => 'View source on GitHub',
+            'github' => 'View on GitHub',
+        ],
+        'downloads' => [
+            'github' => 'View versions on GitHub',
+            'title' => 'Versions and installation',
+            'choose' => 'Versions & installation',
+            'download' => 'Download',
+            'mac_arm' => 'Mac · Apple Silicon',
+            'mac_intel' => 'Mac · Intel',
+            'windows' => 'Windows · 64-bit',
+            'linux' => 'Linux · 64-bit',
+            'setup' => 'Installer',
+            'portable' => 'Portable',
+            'checksums' => 'SHA-256 checksums',
+            'guide' => 'Installation guide',
         ],
         'team' => [
             'title' => 'A lean team.',
@@ -98,21 +125,28 @@ return [
         ],
     ],
     'home' => [
+        'desktop' => [
+            'label' => 'DESKTOP APPLICATIONS',
+            'title' => 'Small apps. A place on your desktop.',
+        ],
         'hero' => [
             'label' => 'Software Ecosystem & Practical AI',
             'title' => 'Building foundations.',
             'highlight' => 'Bringing ideas to life.',
-            'description' => 'SaoLabs is an independent software team in Vietnam developing modern web platforms and practical AI tools — from developer infrastructure to search visibility and structured planning.',
+            'description' => 'SaoLabs is an independent software team in Vietnam creating web platforms, AI agents, content tools and desktop applications for everyday work.',
             'actions' => [
                 'products' => 'Explore our products',
                 'about' => 'Meet SaoLabs',
             ],
         ],
         'ecosystem' => [
-            'tagline' => 'One foundation. Three focused products.',
-            'caption' => 'Web application platform · Search & AI visibility · Research & planning',
+            'tagline' => 'Software foundations. Everyday applications.',
+            'caption' => 'Web platforms · AI agents · Content & search · Research',
         ],
         'products' => [
+            'gehihi' => [
+                'description' => 'For individuals and teams using AI in everyday work. Create agents with reusable skills, private knowledge and workflows you can run on demand or schedule.',
+            ],
             'label' => 'OUR PRODUCTS',
             'title' => 'Dedicated tools for real-world problems',
             'action' => 'Explore the ecosystem',
@@ -187,7 +221,7 @@ return [
             ],
             'products' => [
                 'question' => 'What problems do your products solve?',
-                'answer' => 'Each product has a distinct focus: Saola helps developers build fast, structured web SPAs on Laravel; NeverSEO systematizes organic search and AI visibility; and Crazify assists with research and turns open questions into concrete action plans. All share our focus on clean architecture and practical utility.',
+                'answer' => 'Each product has a distinct focus: Saola helps developers build fast, structured web SPAs on Laravel; NeverSEO systematizes organic search and AI visibility; and Crazify assists with research and turns open questions into concrete action plans. All share our focus on clean architecture and practical utility. Gehihi provides AI agents with skills, private knowledge and schedules. Buzz! Messenger brings classic desktop chat to Messenger; Activity Monitor Widget keeps Mac system metrics in view.',
             ],
             'technology' => [
                 'question' => 'Why build on top of Laravel?',
@@ -195,11 +229,149 @@ return [
             ],
             'contact' => [
                 'question' => 'How can we discuss projects or collaboration?',
-                'answer' => 'Send us an email at support.saolabs@gmail.com sharing your problem statement, target audience, or ideas. We will respond promptly to explore how we can best work together.',
+                'answer' => 'Send us an email at support@saolabs.org sharing your problem statement, target audience, or ideas. We will respond promptly to explore how we can best work together.',
             ],
         ],
     ],
     'products' => [
+        'gehihi' => [
+            'category' => 'AI AGENT PLATFORM',
+            'pitch' => 'Create agents for the way you work.',
+            'description' => 'Choose an existing agent or create your own with reusable skills, private knowledge and multi-step workflows. Run tasks on demand, set schedules and track results in one place.',
+            'tags' => [
+                'skills' => 'Reusable skills',
+                'knowledge' => 'Private knowledge',
+                'automation' => 'Workflows & schedules',
+            ],
+            'action' => 'Explore Gehihi',
+            'launch' => 'Open Gehihi',
+            'website' => 'Visit gehihi.vn',
+            'preview' => [
+                'label' => 'Agents & workflows',
+                'title' => 'Content editing agent',
+                'description' => 'Product documents and brand guidelines provide the input.',
+                'discover' => [
+                    'label' => 'Private documents',
+                    'title' => 'Read product information',
+                ],
+                'research' => [
+                    'title' => 'Edit using your guidelines',
+                ],
+                'action' => [
+                    'label' => 'Output',
+                    'title' => 'Prepare the draft',
+                ],
+                'caption' => 'Illustrative Gehihi workflow',
+            ],
+            'audience' => 'For individuals and teams editing content, analyzing documents or handling repeat tasks with AI using their own instructions and data.',
+            'features' => [
+                'builder' => [
+                    'title' => 'Create agents without coding',
+                    'description' => 'Write instructions, add input fields and arrange processing steps in the interface. Attach skills to reuse editing, analysis or writing methods.',
+                ],
+                'knowledge' => [
+                    'title' => 'Work with your own documents',
+                    'description' => 'Add content, files or URLs as private reference material when the agent supports it. Your private data is separate from the published agent version.',
+                ],
+                'schedules' => [
+                    'title' => 'Schedule runs and track results',
+                    'description' => 'Run an agent once or on a recurring schedule when enabled. Preview upcoming runs, pause schedules and review run history in Gehihi.',
+                ],
+            ],
+            'tools' => [
+                'title' => 'AI tools that support the task',
+                'description' => 'Gehihi also supports multiple AI models, web lookup, source-linked research, and image creation and editing. Available tools depend on provider configuration and access.',
+            ],
+            'workflow' => [
+                'choose' => [
+                    'title' => 'Choose or create an agent',
+                    'description' => 'Find an agent in the public store, add it to your list, or create a new one from your instructions.',
+                ],
+                'configure' => [
+                    'title' => 'Add instructions and documents',
+                    'description' => 'Select skills, add supported reference material and test the agent to refine its output.',
+                ],
+                'run' => [
+                    'title' => 'Run tasks and review results',
+                    'description' => 'Provide new input when needed or set a supported schedule. Review results and previous runs in the platform.',
+                ],
+            ],
+        ],
+        'buzz' => [
+            'category' => 'DESKTOP MESSAGING',
+            'pitch' => 'It starts with that sign-in screen.',
+            'description' => 'The purple Yahoo logo. That familiar smiley. Your ID and the Sign In button. Buzz! Messenger brings back the feeling of desktop chat, connected to the friends you talk to on Facebook Messenger today.',
+            'action' => 'Explore Buzz! Messenger',
+            'preview' => [
+                'image' => '/assets/img/buzz-login-en.png',
+                'image_alt' => 'Buzz! Messenger sign-in screen with the purple Yahoo logo, smiley and empty ID and password fields',
+                'caption' => 'Remember waiting for that smiley to light up?',
+                'open' => 'View full-size image',
+            ],
+            'gallery' => [
+                'label' => 'FAMILIAR SCREENS',
+                'title' => 'From Sign In to BUZZ!',
+                'description' => 'The buddy list, status dots, chat windows and familiar emoticons. A few screens that bring it all back.',
+                'buddies' => [
+                    'image' => '/assets/img/buzz-buddies-en.png',
+                    'image_alt' => 'Buzz! Messenger sample buddy list with avatars, status messages and contact search',
+                    'title' => 'Anyone online yet?',
+                    'description' => 'A familiar list, little status messages and yellow dots that tell you a friend is here.',
+                ],
+                'chat' => [
+                    'image' => '/assets/img/buzz-chat-en.png',
+                    'image_alt' => 'English Buzz! Messenger chat window with conversation tabs, Yahoo emoticons and sample BUZZ messages',
+                    'title' => 'Still remember this sound?',
+                    'description' => 'Conversation tabs, Yahoo emoticons and the unmistakable BUZZ that called your friends back to the chat.',
+                ],
+            ],
+            'audience' => 'For anyone who misses desktop chat windows and wants a familiar way to talk to their Messenger contacts.',
+            'features' => [
+                'classic' => [
+                    'title' => 'A familiar desktop',
+                    'description' => 'Separate windows or tabs, classic skins, Yahoo emoticons and the familiar BUZZ sound.',
+                ],
+                'groups' => [
+                    'title' => 'People and groups',
+                    'description' => 'Search contacts, load older conversations, see sender nicknames and open private chats from the group member list.',
+                ],
+                'files' => [
+                    'title' => 'Files without fuss',
+                    'description' => 'Choose or drop images and files into the composer. Preview your selection before pressing Send.',
+                ],
+            ],
+            'downloads' => [
+                'description' => 'Version 0.2.1 · Choose your operating system for releases and installation instructions.',
+            ],
+        ],
+        'activity' => [
+            'category' => 'MACOS SYSTEM MONITOR',
+            'pitch' => 'Your Mac at a glance. Right on your desktop.',
+            'description' => 'System Activity is a native macOS menu-bar app with a floating desktop widget and WidgetKit extension. Keep CPU, GPU, memory pressure and other system metrics in view.',
+            'action' => 'Explore Activity Monitor Widget',
+            'preview' => [
+                'image_alt' => 'System Activity desktop widget showing four system metrics',
+                'caption' => 'System Activity · Medium desktop widget.',
+            ],
+            'audience' => 'For Mac users who want to keep an eye on system activity without leaving their work.',
+            'features' => [
+                'metrics' => [
+                    'title' => 'Eight useful metrics',
+                    'description' => 'CPU, GPU, memory pressure, disk and network activity, chip temperature, battery and storage usage. Availability depends on your Mac.',
+                ],
+                'layouts' => [
+                    'title' => 'A layout that fits',
+                    'description' => 'Small, Medium and Large layouts, with drag-and-drop metric ordering shared by the floating widget and WidgetKit.',
+                ],
+                'native' => [
+                    'title' => 'Built for the Mac',
+                    'description' => 'Menu-bar controls, adjustable widget appearance and refresh settings, with English and Vietnamese interfaces.',
+                ],
+            ],
+            'downloads' => [
+                'description' => 'Version 0.2.0 · macOS 14 or later · Apple Silicon (ARM64).',
+            ],
+        ],
         'saola' => [
             'category' => 'WEB DEVELOPMENT PLATFORM',
             'pitch' => 'Build modern web SPAs on top of Laravel.',
@@ -349,9 +521,12 @@ return [
             'label' => 'SAOLABS ECOSYSTEM',
             'title' => 'Tools to build.',
             'subtitle' => 'Solutions to grow.',
-            'description' => 'Three products with dedicated roles: modern web development, search & AI discovery, and evidence-grounded planning.',
+            'description' => 'Web platforms, practical AI tools and desktop applications: discover the SaoLabs products, explore their source and download the apps that fit your work.',
         ],
         'guide' => [
+            'gehihi' => [
+                'title' => 'Create agents and automate routine work',
+            ],
             'label' => 'WHERE TO BEGIN',
             'title' => 'What are you looking to achieve?',
             'saola' => [
@@ -374,7 +549,7 @@ return [
         ],
         'story' => [
             'lead' => 'We are an independent software team based in Vietnam, united by a passion for building better ways for people to work alongside technology.',
-            'description' => 'At SaoLabs, we build our products directly from real-world engineering challenges. From Saola Framework to NeverSEO and Crazify, our guiding principle is simple: software should be practical, focused on real problems, clean in code, and straightforward to run.',
+            'description' => 'At SaoLabs, we build our products directly from real-world engineering challenges. From Saola Framework and Gehihi to NeverSEO and Crazify, our guiding principle is simple: software should be practical, focused on real problems, clean in code, and straightforward to run.',
         ],
         'principles' => [
             'foundations' => 'Solid foundations & clean code',
@@ -417,7 +592,7 @@ return [
             'title' => 'Common conversation topics',
             'support' => [
                 'title' => 'Product support & feedback',
-                'description' => 'Questions, user guidance, or technical feedback for Saola, NeverSEO, and Crazify.',
+                'description' => 'Questions, user guidance, or technical feedback for products across the SaoLabs ecosystem.',
             ],
             'projects' => [
                 'title' => 'Custom software development',

@@ -19,6 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->app->booted(fn () => app(\Saola\Core\Engines\ViewContextManager::class)->registerContext('web', [
+            'base' => 'web.themes.default.views',
+        ]));
         //
     }
 }

@@ -47,10 +47,10 @@
                 "web/app"
             ],
             "views": {
-                "web": "web/views"
+                "web.themes.default.views": "web/themes/default/views"
             },
             "blade": {
-                "web": "web"
+                "web.themes.default.views": "web/themes/default/views"
             },
             "compiled": {
                 "views": "web/views",
@@ -59,7 +59,9 @@
             },
             "registry": {
                 "lazy": false
-            }
+            },
+            "mode": "published",
+            "theme": "default"
         }
     },
     "compiler": {

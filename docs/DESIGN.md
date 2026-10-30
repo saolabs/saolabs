@@ -5,7 +5,7 @@
 Tham khảo hai trang được cung cấp tại `templates/cartzilla/index.html` và
 `templates/cartzilla/about-v2.html`. SaoLabs dùng hệ thống nền trắng, màu nhấn
 `#f55266`, chữ tối `#181d25`, nền phụ xám nhạt và các card sản phẩm bo góc.
-Trang chủ được tổ chức theo thứ tự: định vị và sơ đồ hệ sinh thái, ba sản phẩm
+Trang chủ được tổ chức theo thứ tự: định vị và sơ đồ hệ sinh thái, bốn sản phẩm web và hai ứng dụng desktop
 kèm đối tượng sử dụng, bốn nhóm năng lực, hình giao diện thực tế, quy trình ba
 bước, giới thiệu đội ngũ, bốn câu hỏi thường gặp, lời mời liên hệ và footer.
 Sản phẩm, giới thiệu/đội ngũ và liên hệ có trang riêng cho mỗi ngôn ngữ.
@@ -22,6 +22,7 @@ Xem bảng URL đầy đủ tại README. English tại `/`, tiếng Việt tạ
 | `public/assets/img/saolabs-mark.svg`, favicon | `../saola/public/static/saola/brand/saola-mark.svg`, đổi màu nhấn |
 | `public/assets/img/neverseo-project.jpg` | `../neverseo/public/assets/img/guide/project-home.jpg` |
 | `public/assets/img/neverseo-connections.jpg` | `../neverseo/public/assets/img/guide/connections.jpg` |
+| `public/assets/img/buzz-{login,buddies,chat}-{en,vi}.png` | `../../buzz-messenger/docs/images/{login,buddy-list,chat}-{en,vi}.png`, ảnh mẫu không chứa tài khoản thật |
 
 Cartzilla là template do người dùng cung cấp trong repo. Giữ bản gốc tại
 `templates/cartzilla`; các tùy chỉnh nằm trong `public/assets/css/site.css`.
@@ -30,10 +31,10 @@ Không cần JavaScript Bootstrap cho giao diện hiện tại; menu được x�
 
 ## Chỉnh sửa
 
-Nguồn trang nằm trong `resources/saola/web/views/modules/home/*.sao`. Mỗi trang
+Nguồn trang nằm trong `resources/saola/web/themes/default/views/modules/home/*.sao`. Mỗi trang
 chỉ có một view dùng cho mọi locale; layout `layouts/site.sao` chứa header/footer
 và điều hướng chung. Nội dung nằm trong `lang/{locale}/site.php`, bao gồm cả
-metadata, alt ảnh và nhãn trợ năng. Dùng `__('site.…')`, không viết điều kiện
+metadata, alt ảnh và nhãn trợ năng. Dùng `trans('site.…')` để giữ hợp đồng bản dịch Laravel với Compiler 3.0, không viết điều kiện
 `locale === 'vi'` cho từng đoạn văn và không đưa HTML vào file dịch.
 
 File dịch dùng mảng lồng nhau theo trang, section, mục và trường. Ví dụ:
@@ -59,6 +60,15 @@ chuyển ngôn ngữ giữ hash và hiển thị ảnh sản phẩm.
 
 Chạy `php artisan test`, `npm run build`, `npm run dist:static` trước triển khai.
 Build static tự thu thập CSS, font, icon, ảnh và script theo liên kết trong trang.
+
+Liên kết giữa các trang và giữa các ngôn ngữ dùng điều hướng SPA mặc định;
+không đặt `data-nav="false"` trên các link `site_url(...)` hoặc menu ngôn ngữ.
+Thuộc tính này chỉ dành cho tệp, liên kết ngoài, email, điện thoại và anchor
+thuần trong trang. Bootstrap chuẩn bị URL đích và bản dịch trước khi render,
+rồi đồng bộ menu, canonical, hreflang, metadata và lượt xem sau điều hướng.
+Catalog Laravel gửi đủ ngôn ngữ của website để chuyển locale không tải lại trang.
+Khi kiểm tra SPA, thử cả menu mobile, đổi ngôn ngữ, link tới section, click lại
+trang hiện tại và Back/Forward; nội dung, URL và metadata phải cùng một trang.
 
 ## Cấu trúc nội dung và SEO
 

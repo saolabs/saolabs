@@ -1,0 +1,28 @@
+<template>
+@extends(__layout__ + "site")
+@section('html:lang', site_locale())
+@section('meta:title', trans('site.meta.about.title'))
+@section('meta:description', trans('site.meta.about.description'))
+@section('seo:path', 'about')
+@block('content')
+<section class="container page-intro"><p class="section-label">{{ trans('site.about.hero.label') }}</p><h1>{{ trans('site.about.hero.title') }}<br>{{ trans('site.about.hero.subtitle') }}</h1><p>{{ trans('site.about.hero.description') }}</p></section><section class="about-section section" id="about" aria-labelledby="about-title"><div class="container about-grid">
+        <div class="about-copy"><p class="section-label">{{ trans('site.about.hero.label') }}</p><h2 id="about-title">{{ trans('site.common.team.title') }}<br>{{ trans('site.common.team.subtitle') }}</h2><p class="about-lead">{{ trans('site.about.story.lead') }}</p><p>{{ trans('site.about.story.description') }}</p><ul class="principles"><li><i class="ci-check-circle" aria-hidden="true"></i>{{ trans('site.about.principles.foundations') }}</li><li><i class="ci-check-circle" aria-hidden="true"></i>{{ trans('site.about.principles.ai') }}</li><li><i class="ci-check-circle" aria-hidden="true"></i>{{ trans('site.about.principles.details') }}</li></ul></div>
+        <div class="about-note"><img src="/assets/img/saolabs-mark.svg" width="60" height="60" alt=""><blockquote>{{ trans('site.about.quote.title') }}<br>{{ trans('site.about.quote.subtitle') }}</blockquote><span>{{ trans('site.about.quote.caption') }}</span><div class="about-products"><span>Saola</span><span>NeverSEO</span><span>Crazify</span></div></div>
+    </div></section><section class="container section team-section" id="team" aria-labelledby="team-title"><div class="centered-heading"><p class="section-label">{{ trans('site.about.team.label') }}</p><h2 id="team-title">{{ trans('site.about.team.title') }}</h2><p>{{ trans('site.about.team.description') }}</p></div><div class="team-grid"><article class="team-member">
+    <div class="member-avatar" aria-hidden="true">LD</div>
+    <div><h3>Lê Ngọc Doãn</h3><p>{{ trans('site.about.team.member_label') }}</p></div>
+</article>
+<article class="team-member">
+    <div class="member-avatar" aria-hidden="true">PL</div>
+    <div><h3>Phạm Quang Linh</h3><p>{{ trans('site.about.team.member_label') }}</p></div>
+</article>
+<article class="team-member">
+    <div class="member-avatar" aria-hidden="true">PT</div>
+    <div><h3>Phùng Đức Thắng</h3><p>{{ trans('site.about.team.member_label') }}</p></div>
+</article>
+<article class="team-member">
+    <div class="member-avatar" aria-hidden="true">VH</div>
+    <div><h3>Vũ Minh Hiếu</h3><p>{{ trans('site.about.team.member_label') }}</p></div>
+</article></div></section><section class="container compact-contact" id="contact"><div><div><h2>{{ trans('site.common.cta.title') }}</h2><p>{{ trans('site.common.cta.description') }}</p></div><a href="{{ site_url('contact') }}" class="btn btn-primary" >{{ trans('site.common.cta.action') }}<i class="ci-chevron-right" aria-hidden="true"></i></a></div></section>
+@endblock
+</template>

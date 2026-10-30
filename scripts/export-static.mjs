@@ -19,9 +19,9 @@ const siteConfiguration = JSON.parse(execFileSync(process.env.SAOLA_PHP_BINARY |
 ], { encoding: 'utf8' }));
 const languages = Object.entries(siteConfiguration.locales);
 const defaultLocale = languages.find(([, language]) => language.prefix === '')[0];
-const localizedUrl = (slug, locale) => '/' + [siteConfiguration.locales[locale].prefix, slug].filter(Boolean).join('/');
+const localizedUrl = (slug, locale) => pages.find(page => page.slug === slug && page.locale === locale).route;
 const routeInfo = route => {
-    const path = route.replace(/^\/+|\/+$/g, '');
+    const path = route.replace(/^\/+|\/+$/g, '').replace(/\.html$/, '');
     for (const [locale, { prefix }] of languages) {
         if (prefix && (path === prefix || path.startsWith(prefix + '/'))) return { locale, slug: path.slice(prefix.length).replace(/^\//, '') };
     }
@@ -37,13 +37,21 @@ const descriptions = Object.fromEntries(languages.map(([locale]) => {
 const output = resolve(root, 'dist-static/web');
 const members = ['Lê Ngọc Doãn', 'Phạm Quang Linh', 'Phùng Đức Thắng', 'Vũ Minh Hiếu'];
 
-// The shared static builder omits inline scripts. Restore the site's JSON-LD
-// and crawler files here without changing shared packages or generated views.
+// The shared static builder omits inline scripts. Restore the site's Google tag,
+// JSON-LD and crawler files here without changing shared packages or generated views.
+const googleTag = readFileSync(resolve(root, 'resources/views/_system/partials/google-tag.blade.php'), 'utf8');
 const manifest = JSON.parse(readFileSync(resolve(output, 'saola-dist.json'), 'utf8'));
 if (manifest.skipped?.length) throw new Error('Static export skipped registered pages');
 const pages = manifest.pages.map(({ file, url }) => ({
     file, route: url, ...routeInfo(url),
 }));
+// Preserve old links without changing the Laravel URLs or generated filenames.
+manifest.redirects = Object.fromEntries(pages.flatMap(({ file, route }) => {
+    const old = route.endsWith('.html') ? route.slice(0, -5) : route;
+    return [old, old === '/' ? '/' : old + '/', '/' + file, ...(old !== route ? [old + '/index.html'] : [])]
+        .filter(alias => alias !== route).map(alias => [alias, route]);
+}));
+writeFileSync(resolve(output, 'saola-dist.json'), JSON.stringify(manifest, null, 2) + '\n');
 for (const { file, route, locale, slug } of pages) {
     const path = resolve(output, file);
     let html = readFileSync(path, 'utf8');
@@ -64,11 +72,14 @@ for (const { file, route, locale, slug } of pages) {
     }
     // The standalone client replaces the Laravel bundle; discard its stale preload.
     html = html.replace(/^.*<script>if\(location\.protocol.*static\/saola\/web\/js\/app\.web\.js.*<\/script>\s*$/gm, '');
+    // Replace the loader retained by the builder with the complete tag, once per page.
+    html = html.replace(/<script\b[^>]*src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-EM6FT06SYJ"[^>]*>\s*<\/script>\s*/g, '');
+    html = html.replace('<head>', `<head>\n${googleTag}`);
     const schema = {
         '@context': 'https://schema.org', '@type': 'Organization',
         name: 'SaoLabs', url: origin + '/',
         description: descriptions[locale] || descriptions[defaultLocale],
-        email: 'support.saolabs@gmail.com', telephone: '+84 382 434 682',
+        email: 'support@saolabs.org', telephone: '+84 382 434 682',
         address: {
             '@type': 'PostalAddress', streetAddress: 'Số 172, đường Bà Triệu, phường Thống Nhất',
             addressRegion: 'Phú Thọ', addressCountry: 'VN',

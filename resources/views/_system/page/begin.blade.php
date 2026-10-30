@@ -8,7 +8,7 @@
         '@context' => 'https://schema.org', '@type' => 'Organization',
         'name' => 'SaoLabs', 'url' => $origin.'/',
         'description' => __('site.common.organization.description'),
-        'email' => 'support.saolabs@gmail.com', 'telephone' => '+84 382 434 682',
+        'email' => 'support@saolabs.org', 'telephone' => '+84 382 434 682',
         'address' => ['@type' => 'PostalAddress', 'streetAddress' => 'Số 172, đường Bà Triệu, phường Thống Nhất',
             'addressRegion' => 'Phú Thọ', 'addressCountry' => 'VN'],
         'member' => array_map(fn ($name) => ['@type' => 'Person', 'name' => $name],
@@ -18,6 +18,7 @@
 <!DOCTYPE html>
 <html lang="@yield('html:lang', 'en')">
 <head>
+    @include($__system__.'partials.google-tag')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('meta:title', 'SaoLabs — Software for what comes next.')</title>
